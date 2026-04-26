@@ -7,7 +7,7 @@ const { YourInformationPage } = require('../../pages/YourInformationPage');
 const { CheckoutOverviewPage } = require('../../pages/CheckoutOverviewPage');
 const { CheckoutCompletePage } = require('../../pages/CheckoutCompletePage');
 
-test.only('E2E flow', async({page}) => {
+test('E2E flow', async({page}) => {
     const homePage = new HomePage(page)
     const cartPage = new CartPage(page)
     const yourInformationPage = new YourInformationPage(page)
