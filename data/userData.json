@@ -1,0 +1,21 @@
+{
+    "standardUser": {
+        "username" : "standard_user",
+        "password" : "secret_sauce",
+        "firstname": "Warid",
+        "lastname" : "Arshad",
+        "postalcode": "75400"
+    },
+
+    "lockedUser": {
+        "username" : "locked_out_user",
+        "password" : "secret_sauce"
+    },
+
+    "invalidUser" : {
+        "username" : "warid",
+        "password" : "123456"
+    }
+
+
+}

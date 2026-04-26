@@ -1,0 +1,13 @@
+{
+    "backpack" : {
+        "slug" : "sauce-labs-backpack",
+        "name" : "Sauce Labs Backpack",
+        "price": "$29.99"
+    },
+
+    "bikelight" : {
+        "slug" : "sauce-labs-bike-light",
+        "name" : "Sauce Labs Bike Light",
+        "price": "$9.99"
+    }
+}
