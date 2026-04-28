@@ -1,10 +1,10 @@
-const { test, expect } = require('@playwright/test');
+const { test } = require('../../fixtures/base')
+const { expect } = require('@playwright/test');
 const products = require('../../data/productData.json');
 const user = require('../../data/userData.json');
-const { PageManager } = require('../../pages/PageManager')
 
-test('E2E flow', async({page}) => {
-    const pm = new PageManager(page) 
+
+test('E2E flow', async({pm}) => {
 
     // Login from Session Storage
 
