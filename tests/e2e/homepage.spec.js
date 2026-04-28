@@ -1,11 +1,10 @@
-const {test, expect} = require('@playwright/test');
-const { HomePage } = require('../../pages/HomePage');
+const { test } = require('../../fixtures/base')
+const { expect } = require('@playwright/test');
 const product = require('../../data/productData.json');
 
-test('product_add_to_cart', async ({page}) => {
-    const homePage = new HomePage(page)
+test('product_add_to_cart', async ({pm}) => {
     
-    await homePage.gotoHomePage();
-    await homePage.addToCart(product.bikelight.slug)
-    await expect(homePage.cartCountLocator).toHaveText('1');
+    await pm.homePage.gotoHomePage();
+    await pm.homePage.addToCart(product.bikelight.slug)
+    await expect(pm.homePage.cartCountLocator).toHaveText('1');
 })
