@@ -1,11 +1,10 @@
-const {test, expect} = require('@playwright/test');
-const { PageManager } = require('../../pages/PageManager');
+const { test } = require('../../fixtures/base');
+const { expect } = require('@playwright/test');
+
 const users = require('../../data/userData.json');
 
 // Login with valid credentials
-test('login with valid credentials', async ({page}) => {
-    const pm = new PageManager(page);
-
+test('login with valid credentials', async ({pm, page}) => {
     await pm.loginPage.goto();
     await pm.loginPage.login(users.standardUser.username, users.standardUser.password);
 
@@ -17,8 +16,7 @@ test('login with valid credentials', async ({page}) => {
 })
 
 // Login with Locked User
-test('Login with Locked User', async ({page}) => {
-    const pm = new PageManager(page);
+test('Login with Locked User', async ({pm}) => {
     await pm.loginPage.goto();
     await pm.loginPage.login(users.lockedUser.username, users.lockedUser.password);
 
@@ -26,8 +24,7 @@ test('Login with Locked User', async ({page}) => {
 })
 
 // Login with valid username and incorrect password
-test('Login with valid username and incorrect password', async ({page}) => {
-    const pm = new PageManager(page);
+test('Login with valid username and incorrect password', async ({pm}) => {
     await pm.loginPage.goto();
     await pm.loginPage.login(users.standardUser.username, users.invalidUser.password);
 
@@ -35,8 +32,7 @@ test('Login with valid username and incorrect password', async ({page}) => {
 })
 
 // Login with invalid username and correct password
-test('login with invalid username and correct password', async ({page}) => {
-    const pm = new PageManager(page);
+test('login with invalid username and correct password', async ({pm}) => {
     await pm.loginPage.goto();
     await pm.loginPage.login(users.invalidUser.username, users.standardUser.password);
 
@@ -44,8 +40,7 @@ test('login with invalid username and correct password', async ({page}) => {
 })
 
 // Login with empty username and empty password
-test('login with empty username and empty password', async({page}) => {
-    const pm = new PageManager(page);
+test('login with empty username and empty password', async({pm}) => {
     await pm.loginPage.goto();
     await pm.loginPage.login();
 
