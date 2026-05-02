@@ -9,5 +9,12 @@
         "slug" : "sauce-labs-bike-light",
         "name" : "Sauce Labs Bike Light",
         "price": "$9.99"
+    },
+
+    "sortOptions" : {
+        "lowToHigh": "lohi",
+        "highToLow": "hilo",
+        "nameAtoZ": "az",
+        "nameZtoA": "za"
     }
 }
