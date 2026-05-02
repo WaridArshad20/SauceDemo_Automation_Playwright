@@ -34,7 +34,7 @@ test('sort product by alphabatically a-z', async({ pm, page}) => {
     expect(productTitles).toEqual(sorted);
 })
 
-test.only('sort product by alphabatically z-a', async({pm, page}) => {
+test('sort product by alphabatically z-a', async({pm, page}) => {
     await pm.homePage.gotoHomePage();
     await pm.homePage.sortBy(product.sortOptions.nameZtoA);
     const productTitles = await pm.homePage.getProductTitles();
