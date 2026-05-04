@@ -13,8 +13,10 @@ test('sort products by price low to high', async({pm}) => {
     await pm.homePage.gotoHomePage();
     await pm.homePage.sortBy(product.sortOptions.lowToHigh);
     const productPrices = await pm.homePage.getProductPrices();
-    const sorted = [...productPrices].sort((a,b) => a-b);
-    expect(productPrices).toEqual(sorted);
+    // const sorted = [...productPrices].sort((a,b) => a-b);
+    for(let i=0; i< productPrices.length -1; i++){
+        expect(productPrices[i] <= productPrices[i+1]).toBeTruthy();
+    }
 })
 
 test('sort products by price high to low', async ({pm}) => {

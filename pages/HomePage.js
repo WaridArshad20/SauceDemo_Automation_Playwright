@@ -25,7 +25,12 @@ class HomePage {
 
     async getProductPrices(){
         const productPrices = await this.page.locator('[data-test="inventory-item-price"]').allTextContents();
-        return productPrices.map(p => parseFloat(p.replace("$", "")));
+        const prices = [];
+        for(let i=0; i<productPrices.length; i++){
+            const withoutDollar = productPrices[i].replace("$", "");
+            prices.push(parseFloat(withoutDollar));
+        }
+        return prices;
     }
 
     async getProductTitles(){
